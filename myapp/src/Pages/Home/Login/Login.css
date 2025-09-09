@@ -1,0 +1,68 @@
+.sign {
+    background-color:#212121;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 600px;
+   
+  
+}
+ .sign h1{
+    text-align: center;
+}  
+
+
+
+h3{
+  color: black;
+  font-size: medium;
+}
+.white {
+    background-color: white;
+    padding: 20px;
+     border-radius: 10px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+   
+    
+}
+.sub h3{
+    color:white;
+}
+.sub{
+    background-color: #212121;
+   
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+   
+}
+.check {
+    display: flex;
+    /* justify-content: center; */
+}
+
+.white ::placeholder{
+    color: rgb(196, 201, 204);
+}
+.white input[type="email"],
+.white input[type="password"]{
+    /* border: none;
+    border-bottom: 2px solid grey;
+    outline: none; */
+    padding: 2px;
+}
+.white input[type="email"]:hover,
+.white input[type="password"]:hover {
+    border: 2px solid black;
+    cursor: pointer;
+   
+}
+.white .sub:active{
+    transform:scale(0.99);
+}
+.check input[type="checkbox"] {
+    accent-color: black;
+}

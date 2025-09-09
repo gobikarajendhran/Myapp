@@ -1,0 +1,59 @@
+.image {
+    background-color: #212121;
+    padding: 130px;
+    position: relative;
+    /* bottom: 10px; */
+
+}
+
+.image1 {
+
+    position: absolute;
+    left: 350px;
+    top: 160px;
+
+}
+
+.list p {
+    color: black;
+}
+
+.list {
+
+    display: flex;
+    gap: 30px;
+
+
+}
+
+.topic {
+    justify-content: space-around;
+    display: flex;
+    gap: 30px;
+
+}
+
+.description p {
+    color: grey;
+    font-size: large;
+}
+
+#btn {
+
+    padding: 11px 25px 26px 25px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    margin-top: 29px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2 ease;
+
+}
+
+#btn:focus {
+    background-color: grey;
+
+}

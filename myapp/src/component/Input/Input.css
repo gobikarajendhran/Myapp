@@ -1,0 +1,19 @@
+.form1 {
+    color: rgb(175, 175, 200);
+    width: 200px;
+    margin-bottom: 20px;
+  
+
+}
+
+.text {
+    border: none;
+    border-bottom:  2px solid rgb(177, 177, 177);
+    outline: none;
+}
+
+.text:focus {
+    border-bottom: 2px solid black;
+    transition: color 4s ease-in 0.3s;
+}
+

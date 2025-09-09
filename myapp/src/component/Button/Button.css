@@ -1,0 +1,30 @@
+.secondary{
+    background-color:#212121;
+    color: white;
+    padding: 10px 20px 10px 20px; 
+    border-radius: 10px;
+    transition: 0.3s ease;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.primary{
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    transition: 0.2s ease;
+    color: black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.primary:active{
+    /* cursor: pointer; */
+    background-color: grey;
+    
+}
+.secondary:active{
+    /* cursor: pointer; */
+    background-color: grey;
+}
+

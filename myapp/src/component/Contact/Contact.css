@@ -1,0 +1,42 @@
+.headerarea{
+    padding: 50px;
+}
+
+
+.line1, .line2, .line3 {
+    display: flex;
+}
+#img{
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
+   
+}
+#p1, #p2, #p3{
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   padding-right: 10px;
+}
+.footerarea{
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.box1{
+    border: 2px solid grey;
+   display: inline-block;
+    padding:30px 50px 30px 20px ;
+    border-radius: 10px;
+}
+.box2{
+border: 2px solid grey;
+    display: inline-block;
+    padding: 30px 50px 30px 20px;
+    border-radius: 10px;
+}
+
+.box3{
+border: 2px solid grey;
+    display: inline-block;
+    padding: 30px 50px 30px 20px;
+    border-radius: 10px;
+}

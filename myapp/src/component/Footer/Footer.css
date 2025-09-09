@@ -1,0 +1,32 @@
+.footerpara{
+    gap: 30px;
+   display: flex;
+   justify-content: center;
+   padding: 50px;
+}
+.footerpara p{
+    color: grey;
+    font-size: large;
+}
+
+#para{
+    color: grey;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}   
+.endbox{
+    color: black;
+    /* display: flex;
+    justify-content: flex-end;
+     */
+     overflow: visible;
+    
+
+}
+.end{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  
+}

@@ -1,0 +1,30 @@
+body{
+    font-family: Roboto,sans-serif;
+   
+}
+.box{
+    border: 2px solid lightgrey;
+    padding: 80px 20px 20px 50px;
+   border-radius: 10px;
+    box-shadow: 0px 4px 12px (black);
+}    
+.secondbox .all{
+   padding:70px ;
+   width: 400px;
+}
+label{
+    color: grey;
+    
+}
+label:focus,.textarea:focus{
+    border-bottom: 2px solid black;
+}
+.textarea{
+    display: block;
+    border: none;
+    border-bottom:2px solid grey;
+   
+    outline: none;
+   width: 150px; 
+}
+
