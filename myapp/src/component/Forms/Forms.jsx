@@ -1,18 +1,9 @@
 import './Forms.css'
-import { useState, useEffect } from 'react';
-
-
+import { useState } from 'react';
 
 function Forms() {
     const [formData, setformData] = useState({});
     const [errors, seterrors] = useState({});
-
-
-
-    // useEffect(() => {
-    //     console.log("use")
-    // }, []);
-
     const validateField = (name, value) => {
         let error = "";
         if (name === "name" && !value) {
@@ -25,7 +16,6 @@ function Forms() {
 
             }
         }
-
         if (name === "mobile") {
             if (!value) error = "mobile required";
             else if (!/^\d{10}$/.test(value)) error = "Mobile must be 10 digits";
@@ -50,29 +40,25 @@ function Forms() {
     const handleChange = (eve) => {
         const { name, type, value, checked, files, selectedOptions } = eve.target;
         let newValue = value;
-
         if (type === "checkbox") {
             newValue = checked ? value : "";
         }
         if (type === "file") {
             newValue = files[0];
-            if (eve.target.multiple) {
-                newValue = Array.from(selectedOptions, option => option.value);
-            }
-            setformData((prev) => ({ ...prev, [name]: newValue }));
-
-            console.log("Current Value", name, newValue);
-            const fieldError = validateField(name, newValue);
-            seterrors((prev) => ({ ...prev, [name]: fieldError }));
-
-
-        };
-        const handleSubmit = (eve) => {
-            eve.preventDefault();
-            console.log("Full form Data:", formData);
+        } if (eve.target.multiple) {
+            newValue = Array.from(selectedOptions, option => option.value);
         }
+        setformData((prev) => ({ ...prev, [name]: newValue }));
+        const fieldError = validateField(name, newValue);
+        seterrors((prev) => ({ ...prev, [name]: fieldError }));
+        console.log("Current Value", name, newValue);
 
-    }
+    };
+
+    const handleSubmit = (eve) => {
+        eve.preventDefault();
+        console.log("Full form Data:", formData);
+    };
 
     return (
         <>
@@ -160,11 +146,6 @@ function Forms() {
                     )}<br />
                     <button type="submit">submit</button>
                 </div>
-
-
-
-
-
             </form>
 
 
@@ -172,6 +153,6 @@ function Forms() {
 
         </>
     );
-}
+};
 
 export default Forms;

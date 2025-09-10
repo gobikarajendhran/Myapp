@@ -10,7 +10,7 @@ import Grid from '@mui/material/Grid';
 import Input from '../../component/Input/Input';
 import Button from '../../component/Button/Button';
 import Footer from '../../component/Footer/Footer';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import Image from "../../component/Image/Image";
 function Home() {
 
@@ -29,7 +29,7 @@ function Home() {
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
-    console.log(scrollTop, "scrollTop");
+    // console.log(scrollTop, "scrollTop");
     setIsScrolled(scrollTop > 10);
   };
 
