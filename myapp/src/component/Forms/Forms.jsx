@@ -5,27 +5,26 @@ function Forms() {
     const [formdata, setformdata] = useState({});
     const [error, setError] = useState({});
 
-   
+
     const field = [
         { type: "text", name: "name", label: "Name", required: true },
         { type: "range", name: "age", label: "Age", min: "0", max: "100" },
         { type: "text", name: "username", label: "UserName", required: true },
         { type: "text", name: "mothername", label: "MotherName" },
         { type: "text", name: "fathername", label: "fatherName" },
-        { type: "text", name: "mobile", label: "MobileNumber", required: true},
-        { type: "radio", name: "gnder", label: "Gender", required: true, option: ["Male", "Female"]},
+        { type: "text", name: "mobile", label: "MobileNumber", required: true },
+        { type: "radio", name: "gnder", label: "Gender", required: true, option: ["Male", "Female"] },
         { type: "text", name: "doorno", label: "Door No" },
         { type: "text", name: "area", label: "Area" },
         { type: "text", name: "street", label: "Street" },
         { type: "text", name: "city", label: "City" },
-        { type: "text", name: "country", label: "Country", required: true},
+        { type: "text", name: "country", label: "Country", required: true },
         { type: "text", name: "pincode", label: "PinCode" },
-        { type: "checkbox", name: "occupation", label: "Occupation", required: true, option: ["Working", "Student"]},
+        { type: "checkbox", name: "occupation", label: "Occupation", required: true, option: ["Working", "Student"] },
         { type: "checkbox", name: "education", label: "Education", option: ["College", "School"] },
-        {type: "text", name: "collegename", label: "College/SchoolName"},
-        {type: "select", name: "interest", label: "Area of Interset", required: true, option: ["HTML", "CSS", "React", "Javascript", "Python"]},
-        
-        {type: "file", name: "resume", label: "Resume", required: true},
+        { type: "text", name: "collegename", label: "College/SchoolName" },
+        { type: "select", name: "interest", label: "Area of Interset", required: true, option: ["HTML", "CSS", "React", "Javascript", "Python"] },
+        { type: "file", name: "resume", label: "Resume", required: true },
     ];
     const rules = {
         name: value => !value ? "Name Required" : "",
@@ -34,12 +33,13 @@ function Forms() {
         gender: value => !value ? "Select Gender" : "",
         country: value => !value ? "Country" : "",
         occupation: value => !value ? "occupation" : "",
-        resume: value => !value ? "Upload resume" : !(value && value.name && (value.name.endsWith(".pdf") || value.name.endsWith('.docx'))) ? 'only pdf or docx allowed' : "" };
-    
+        resume: value => !value ? "Upload resume" : !(value && value.name && (value.name.endsWith(".pdf") || value.name.endsWith('.docx'))) ? 'only pdf or docx allowed' : ""
+    };
+
     const validateField = (name, value) => rules[name] ? rules[name](value) : "";
 
-        
- const handleChange = (eve) => {
+
+    const handleChange = (eve) => {
         const { name, type, value, checked, files, selectedOptions } = eve.target;
         let newValue = value;
 
@@ -52,7 +52,6 @@ function Forms() {
         if (eve.target.multiple) {
             newValue = Array.from(selectedOptions, option => option.value);
         }
-
         setformdata((prev) => ({ ...prev, [name]: newValue }));
 
         const fieldError = validateField(name, newValue);
@@ -61,24 +60,24 @@ function Forms() {
         console.log("Current Value", name, newValue);
     };
 
-   
+
     const handleSubmit = (eve) => {
         eve.preventDefault();
         console.log("Full form Data:", formdata);
     };
 
- return (
+    return (
         <form onSubmit={handleSubmit}>
             {field.map((field) => (
                 <div className='form'>
                     <p>{field.label} {field.required && <span style={{ color: "red" }}> *</span>}</p>
 
-                    
+
                     {field.type === "select" ? (
                         <select name={field.name} onChange={handleChange} value={formdata[field.name] || ""}>
                             <option value="">select</option>
                             {field.option.map((option) => (
-                                <option value={option}>{option }</option>
+                                <option value={option}>{option}</option>
                             ))}
                         </select>
                     ) : field.option
@@ -100,11 +99,12 @@ function Forms() {
                             />
                         )}
                     {field.type === "range" && <span> {formdata[field.name] || 0}</span>}
+                    {console.log(error[field.name])}
                     {error[field.name] && <p style={{ color: "red" }}>{error[field.name]}</p>}
 
                 </div>
             ))}
-            <button type="submit">Submit</button> 
+            <button type="submit">Submit</button>
         </form>
     );
 }
@@ -177,4 +177,3 @@ export default Forms;
 
 
 
-    
